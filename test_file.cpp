@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    char data[100];
+    char data[1024];
 
     ofstream outfile;
     outfile.open("./test.text");
@@ -12,6 +12,18 @@ int main() {
     outfile << "The sun comes right back up the next day." << endl;
 
     outfile.close();
+
+    ifstream infile;
+    infile.open("./test.text");
+    infile >> data;
+
+    cout << data << endl;
+
+    infile >> data;
+
+    cout << data << endl;
+
+    infile.close();
 
     return 0;
 }
